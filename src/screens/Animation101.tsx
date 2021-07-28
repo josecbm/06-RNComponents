@@ -1,40 +1,29 @@
 import React, { useRef } from 'react'
-import { StyleSheet, View, Animated, Button} from 'react-native';
+import { StyleSheet, View, Animated, Button, Easing} from 'react-native';
+import { useAnimation } from '../hooks/useAnimation';
 
 export const Animation101 = () => {
 
-    const opacity = useRef(new Animated.Value(0)).current;        
-
-    const fadeIn = () => {
-        Animated.timing(
-            opacity,
-            {
-                toValue: 1,
-                duration: 300,
-                useNativeDriver: true
-            }
-        ).start();
-    }
-    const fadeOut = () => {
-        Animated.timing(
-            opacity,
-            {
-                toValue: 0,
-                duration: 300,
-                useNativeDriver: true
-            }
-        ).start(() => console.log("Animacion termino"));
-    }
+    const {opacity,position, startMovingPosition, fadeIn, fadeOut} = useAnimation();
     return (
         <View style={styles.container}>
             <Animated.View style={
                 {
                     ...styles.purpleBox,
-                    opacity: opacity
+                    opacity: opacity,
+                    marginBottom: 20,
+                    transform: [{
+                        translateY: position
+                    }],
             }}/>
             <Button
                 title="FadeIn"
-                onPress = {fadeIn}
+                onPress = {() => 
+                    {
+                        fadeIn();
+                        startMovingPosition(100);
+                    }
+                }
             />
             <Button
                 title="FadeOut"
@@ -57,3 +46,7 @@ const styles = StyleSheet.create({
         height: 150
     }
 });
+
+function startMovingPosition() {
+    throw new Error('Function not implemented.');
+}
