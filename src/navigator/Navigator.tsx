@@ -8,6 +8,8 @@ import { AlertScreen } from '../screens/AlertScreen';
 import { TextInputScreen } from '../screens/TextInputScreen';
 import { PullToRefresh } from '../screens/PullToRefresh';
 import { CustonSectionListScreen } from '../screens/CustonSectionListScreen';
+import { ModalScreen } from '../screens/ModalScreen';
+import { InfiniteScreollScreen } from '../screens/InfiniteScreollScreen';
 
 const Stack = createStackNavigator();
 
@@ -29,6 +31,8 @@ export const  Navigator = ()=> {
         <Stack.Screen name="TextInputScreen" component={TextInputScreen} />
         <Stack.Screen name="PullToRefresh" component={PullToRefresh} />
         <Stack.Screen name="CustonSectionListScreen" component={CustonSectionListScreen} />
+        <Stack.Screen name="ModalScreen" component={ModalScreen} />
+        <Stack.Screen name="InfiniteScreollScreen" component={InfiniteScreollScreen} />
     </Stack.Navigator>
     );
 }
