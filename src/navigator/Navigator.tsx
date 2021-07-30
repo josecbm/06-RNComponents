@@ -10,6 +10,7 @@ import { PullToRefresh } from '../screens/PullToRefresh';
 import { CustonSectionListScreen } from '../screens/CustonSectionListScreen';
 import { ModalScreen } from '../screens/ModalScreen';
 import { InfiniteScreollScreen } from '../screens/InfiniteScreollScreen';
+import { SlidesScreen } from '../screens/SlidesScreen';
 
 const Stack = createStackNavigator();
 
@@ -33,6 +34,7 @@ export const  Navigator = ()=> {
         <Stack.Screen name="CustonSectionListScreen" component={CustonSectionListScreen} />
         <Stack.Screen name="ModalScreen" component={ModalScreen} />
         <Stack.Screen name="InfiniteScreollScreen" component={InfiniteScreollScreen} />
+        <Stack.Screen name="SlidesScreen" component={SlidesScreen} />
     </Stack.Navigator>
     );
 }
